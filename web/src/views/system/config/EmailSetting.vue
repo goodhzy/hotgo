@@ -75,6 +75,22 @@
           />
         </n-form-item>
 
+        <n-divider title-placement="left">邮箱后缀配置</n-divider>
+        <n-form-item label="邮箱后缀" path="smtpSuffix">
+          <n-dynamic-tags
+            v-model:value="formValue.smtpSuffix"
+            placeholder="输入邮箱后缀，按回车添加"
+            closable
+            round
+            class="email-suffix-tags"
+          />
+          <template #feedback>
+            <div class="my-5">
+              <p>支持多个邮箱后缀，用于注册时展示</p>
+            </div>
+          </template>
+        </n-form-item>
+
         <div>
           <n-space>
             <n-button type="primary" @click="formSubmit">保存更新</n-button>
@@ -154,6 +170,16 @@
     smtpMaxIpLimit: 10,
     smtpCodeExpire: 600,
     smtpTemplate: null,
+    smtpSuffix: [
+      '@gmail.com',
+      '@outlook.com',
+      '@hotmail.com',
+      '@yahoo.com',
+      '@163.com',
+      '@qq.com',
+      '@126.com',
+      '@foxmail.com',
+    ],
   });
 
   function confirmForm(e) {
@@ -208,3 +234,9 @@
     });
   }
 </script>
+
+<style scoped>
+  .email-suffix-tags :deep(.n-tag) {
+    margin: 4px 4px;
+  }
+</style>

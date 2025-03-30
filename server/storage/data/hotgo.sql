@@ -1528,7 +1528,7 @@ INSERT INTO `hg_sys_config` (`id`, `group`, `name`, `type`, `key`, `value`, `def
 (126, 'upload', 'minio存储路径', 'string', 'uploadMinioPath', 'hotgo/attachment/', '', 650, '', 1, 1, '2021-01-30 13:27:43', '2024-02-28 16:56:35'),
 (127, 'upload', 'minio桶名称', 'string', 'uploadMinioBucket', '', '', 650, '', 1, 1, '2021-01-30 13:27:43', '2024-02-28 16:56:35'),
 (128, 'upload', 'minio对外访问域名', 'string', 'uploadMinioDomain', '', '', 650, '', 1, 1, '2021-01-30 13:27:43', '2024-02-28 16:56:35');
-
+(129, 'smtp', '邮箱后缀', '[]string', 'smtpSuffix', '["gmail.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com", "protonmail.com", "qq.com", "163.com", "126.com", "yeah.net", "foxmail.com", "sina.com", "sohu.com", "aliyun.com", "live.com", "msn.com", "me.com", "gmx.com", "zoho.com", "yandex.com", "mail.com"]', '', 650, '用户注册支持的邮箱后缀', 1, 1, '2021-01-30 13:27:43', '2024-02-28 16:56:35');
 -- --------------------------------------------------------
 
 --

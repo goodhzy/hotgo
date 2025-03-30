@@ -1,0 +1,1 @@
+export const EMAIL_DOMAINS = ["gmail.com", "hotmail.com", "outlook.com", "aol.com", "icloud.com", "protonmail.com", "qq.com", "163.com", "126.com", "yeah.net", "foxmail.com", "sina.com", "sohu.com", "aliyun.com", "live.com", "msn.com", "me.com", "gmx.com", "zoho.com", "yandex.com", "mail.com"]; 
