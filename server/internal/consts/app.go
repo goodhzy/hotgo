@@ -12,4 +12,5 @@ const (
 	AppHome      = "home"
 	AppWebSocket = "websocket"
 	AppDefault   = "default"
+	AppFrontend  = "frontend"
 )

@@ -40,6 +40,7 @@ type EmailConfig struct {
 	MaxIpLimit   int              `json:"smtpMaxIpLimit"`
 	CodeExpire   int              `json:"smtpCodeExpire"`
 	Template     []*EmailTemplate `json:"smtpTemplate"`
+	Suffix       []string         `json:"smtpSuffix"`
 }
 
 // CashConfig 提现配置
