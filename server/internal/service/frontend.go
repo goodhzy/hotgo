@@ -7,6 +7,7 @@ package service
 
 import (
 	"context"
+	"hotgo/internal/model/input/apin"
 	"hotgo/internal/model/input/frontendIn"
 )
 
@@ -14,10 +15,14 @@ type (
 	IFrontendConfig interface {
 		GetSmtpSuffix(ctx context.Context) (res *frontendIn.GetSmtpSuffixRes, err error)
 	}
+	IFrontendMember interface {
+		Register(ctx context.Context, in *apin.RegisterReq) (err error)
+	}
 )
 
 var (
 	localFrontendConfig IFrontendConfig
+	localFrontendMember IFrontendMember
 )
 
 func FrontendConfig() IFrontendConfig {
@@ -29,4 +34,15 @@ func FrontendConfig() IFrontendConfig {
 
 func RegisterFrontendConfig(i IFrontendConfig) {
 	localFrontendConfig = i
+}
+
+func FrontendMember() IFrontendMember {
+	if localFrontendMember == nil {
+		panic("implement not found for interface IFrontendMember, forgot register?")
+	}
+	return localFrontendMember
+}
+
+func RegisterFrontendMember(i IFrontendMember) {
+	localFrontendMember = i
 }

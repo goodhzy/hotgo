@@ -5,7 +5,12 @@
 // @License  https://github.com/bufanyun/hotgo/blob/master/LICENSE
 package v1
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"hotgo/internal/model/input/adminin"
+	"hotgo/internal/model/input/apin"
+
+	"github.com/gogf/gf/v2/frame/g"
+)
 
 // GetIdByCodeReq 通过邀请码获取用户ID
 type GetIdByCodeReq struct {
@@ -14,3 +19,13 @@ type GetIdByCodeReq struct {
 }
 
 type GetIdByCodeRes struct{}
+
+// RegisterReq 注册用户
+type RegisterReq struct {
+	g.Meta `path:"/member/register" method:"post" tags:"用户" summary:"注册用户"`
+	apin.RegisterReq
+}
+
+type RegisterRes struct {
+	*adminin.LoginModel
+}

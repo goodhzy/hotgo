@@ -12,4 +12,5 @@ import (
 
 type IMemberV1 interface {
 	GetIdByCode(ctx context.Context, req *v1.GetIdByCodeReq) (res *v1.GetIdByCodeRes, err error)
+	Register(ctx context.Context, req *v1.RegisterReq) (res *v1.RegisterRes, err error)
 }
