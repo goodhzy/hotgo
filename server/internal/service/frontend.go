@@ -9,9 +9,14 @@ import (
 	"context"
 	"hotgo/internal/model/input/apin"
 	"hotgo/internal/model/input/frontendIn"
+
+	"github.com/gogf/gf/v2/net/gclient"
 )
 
 type (
+	IApplication interface {
+		EnglishGrammarTranslation(ctx context.Context, req *apin.EnglishGrammarTranslationReq) (res *gclient.Response, err error)
+	}
 	IFrontendConfig interface {
 		GetSmtpSuffix(ctx context.Context) (res *frontendIn.GetSmtpSuffixRes, err error)
 	}
@@ -21,9 +26,21 @@ type (
 )
 
 var (
+	localApplication    IApplication
 	localFrontendConfig IFrontendConfig
 	localFrontendMember IFrontendMember
 )
+
+func Application() IApplication {
+	if localApplication == nil {
+		panic("implement not found for interface IApplication, forgot register?")
+	}
+	return localApplication
+}
+
+func RegisterApplication(i IApplication) {
+	localApplication = i
+}
 
 func FrontendConfig() IFrontendConfig {
 	if localFrontendConfig == nil {
