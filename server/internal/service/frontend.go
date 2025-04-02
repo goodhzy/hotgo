@@ -22,6 +22,7 @@ type (
 	}
 	IFrontendMember interface {
 		Register(ctx context.Context, in *apin.RegisterReq) (err error)
+		Login(ctx context.Context, in *apin.LoginReq) (res *apin.LoginRes, err error)
 	}
 )
 

@@ -29,3 +29,14 @@ type RegisterReq struct {
 type RegisterRes struct {
 	*adminin.LoginModel
 }
+
+// LoginReq 登录请求
+type LoginReq struct {
+	g.Meta `path:"/member/login" method:"post" tags:"用户" summary:"用户登录"`
+	apin.LoginReq
+}
+
+// LoginRes 登录响应
+type LoginRes struct {
+	*apin.LoginRes
+}

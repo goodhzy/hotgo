@@ -129,3 +129,18 @@ func (s *sFrontendMember) Register(ctx context.Context, in *apin.RegisterReq) (e
 		return
 	})
 }
+
+func (s *sFrontendMember) Login(ctx context.Context, in *apin.LoginReq) (res *apin.LoginRes, err error) {
+	loginRes, err := service.AdminSite().AccountLogin(ctx, &adminin.AccountLoginInp{
+		Username: in.Username,
+		Password: in.Password,
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &apin.LoginRes{
+		LoginModel: loginRes,
+	}, nil
+}
