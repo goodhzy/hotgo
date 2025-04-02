@@ -14,7 +14,7 @@ cbuild
 /test/
 main
 output/
-manifest/config/config.yaml
+# manifest/config/config.yaml
 manifest/output/
 resource/log/
 resource/public/admin/
